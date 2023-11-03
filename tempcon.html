@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temparature Convertor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <h2>Temparature Convertor</h2>
+        <form>
+            <label class="blabel" for="Celisius">Enter Celsius</label><br>
+            <input type="text" class="binput" id="Celsius" placeholder="32.0"><br>
+            <button class="bbutton" type="button"  onclick="myfunction()">Convert</button>
+        </form>
+        <br>
+        <div class="convertion" id="convertion">
+            <h2 id="conv" style="font-size:19px;">Convertion</h2>
+            <p id="far"></p>
+            <p id="kel"></p>
+        </div>
+
+        <center>
+        <div class="dbox">
+            <h2>Designed By Anjan</h2>
+        </div>
+    </center>
+    </div>
+
+    <script>
+        document.getElementById("convertion").style.display = "none";
+    </script>
+
+    <script>
+        function myfunction(){
+            var celsiusValue = parseFloat(document.getElementById("Celsius").value);
+            var far = document.getElementById("far");
+            var kel = document.getElementById("kel");
+            document.getElementById("convertion").style.display = "block";
+            
+            far.innerHTML = "Fahrenheit: <b style='color:red;'>" + (celsiusValue * 9/5 + 32) + "°F </b>";
+            kel.innerHTML = "Kelvin: <b style='color:red;'>" + (celsiusValue + 273.15) + "K</b>";
+        }
+    </script>
+
+ 
+
+
+    
+</body>
+</html>
